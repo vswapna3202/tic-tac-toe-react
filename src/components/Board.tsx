@@ -3,9 +3,13 @@
     import { useGameLogic } from '../helper/GameLogic';
 
     const Board = () => {
+        // Get states of squares, isXNext, winner, isDraw, handleClick, handleReset from useGameLogic FC
         const {squares, isXNext, winner, isDraw, handleClick, handleReset} = 
                 useGameLogic();
         let status;
+        // If winner is true then display winner: X or O
+        // If isDraw is true then display Tie
+        // If neither of the above true display Next player: X or O
         if (winner) {
             status = `Winner: ${winner}`;
         }else if (isDraw){
@@ -14,6 +18,7 @@
             status = `Next player: ${isXNext ? 'X' : 'O'}`;
         }
 
+        // Render the square
         const renderSquare = (index: number) => {
             return (    
                 <div className="square" onClick={() => handleClick(index)}>
@@ -22,6 +27,10 @@
             );
         };       
         
+        // Render status and board
+        // Status can be next player, winner or tie
+        // Board will render all the 9 squares
+        // Render the reset button as well below the squares
         return (
             <>
                 <div className="status">{status}</div><br/>
