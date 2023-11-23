@@ -1,0 +1,44 @@
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    height: 120px;
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #f9f9f8;
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: cadetblue;
+    box-sizing: border-box;
+}
+
+.reset {
+    background-color: cadetblue;
+    color:white;
+    padding: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;     
+}
+
+.status {
+    font-family: "Lato", sans-serif;
+}
